@@ -12,14 +12,25 @@ public class MoodAnalyzer {
     }
 
     public String analyzeMood() {
+        String[] messageArr = null;
         String mood = null;
-        String[] messageArr = message.split(" ");
+        messageArr = message.split(" ");
         for (int i = 0; i < messageArr.length; i++) {
             if ((messageArr[i].equals("Happy"))||(messageArr[i].equals("Any"))) {
                 mood = "Happy";
                 break;
-            }else
+            }if (messageArr[i].equals("Sad")) {
                 mood = "Sad";
+                break;
+            }
+            if (messageArr[i].equals(null)){
+                try {
+                    throw new InvalidMoodException();
+                }catch (Exception | InvalidMoodException e){
+                    mood = "Happy";
+                    break;
+                }
+            }
         }
         return mood;
     }
