@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+
 public class MoodAnalyzer {
 
     String message;
@@ -20,13 +21,19 @@ public class MoodAnalyzer {
             messageArr = message.split(" ");
         }
 
-        if (messageArr == null) {
+        if ((messageArr == null)||(message.equals("NULL"))) {
             try {
-                throw new InvalidMoodException();
-            } catch (Exception | InvalidMoodException e) {
-                mood = "Happy";
+                throw new MoodAnalysisException();
+            } catch (Exception | MoodAnalysisException e) {
+                mood = "NULL";
             }
-        } else {
+        } else if(message.equals("Empty Mood")) {
+            try {
+                throw new MoodAnalysisException();
+            } catch (Exception | MoodAnalysisException e) {
+                mood = "Empty Mood";
+            }
+        }else{
             for (int i = 0; i < messageArr.length; i++) {
 
                 if ((messageArr[i].equals("Happy")) || (messageArr[i].equals("Any"))) {
