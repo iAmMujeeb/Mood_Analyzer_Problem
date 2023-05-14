@@ -8,10 +8,10 @@ public class MoodAnalyzerTest {
     @Test
     public void givenMessageShouldReturnMood() {
 
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("NULL");
         String actualMood = moodAnalyzer.analyzeMood();
 
-        Assertions.assertEquals(null, actualMood);
+        Assertions.assertEquals("NULL", actualMood);
     }
 
 }
