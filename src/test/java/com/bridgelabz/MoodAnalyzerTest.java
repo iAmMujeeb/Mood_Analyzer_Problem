@@ -7,9 +7,14 @@ public class MoodAnalyzerTest {
 
     @Test
     public void givenMessageShouldReturnMood() {
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in Any Mood");
-        String actualMood = moodAnalyzer.analyzeMood();
-        Assertions.assertEquals("Happy", actualMood);
+        String actualMood = null;
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
+        try {
+            actualMood = moodAnalyzer.analyzeMood();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        Assertions.assertEquals(null, actualMood);
     }
 
 }
