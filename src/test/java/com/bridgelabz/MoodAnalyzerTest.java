@@ -8,7 +8,7 @@ public class MoodAnalyzerTest {
     @Test
     public void givenMessageShouldReturnMood() {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        String actualMood = moodAnalyzer.analyzeMood("I am in Sad Mood");
+        String actualMood = moodAnalyzer.analyzeMood("I am in Any Mood");
         Assertions.assertEquals("Happy", actualMood);
     }
 
